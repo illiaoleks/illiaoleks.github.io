@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Аудіо-урок | Українська мова онлайн</title>
+    <style>
+      .audio-container {
+        margin: 30px auto;
+        max-width: 800px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      }
+      
+      .audio-player {
+        width: 100%;
+        background-color: #f0f0f0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .audio-player-image {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        object-fit: cover;
+        border: 5px solid #fff;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+      
+      .audio-controls {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 15px 0;
+      }
+      
+      .audio-controls-buttons {
+        display: flex;
+        align-items: center;
+        font-size: 2rem;
+        margin: 0 15px;
+      }
+      
+      .audio-progress {
+        width: 100%;
+        margin-top: 10px;
+      }
+      
+      .audio-info {
+        padding: 20px;
+        background-color: #fff;
+      }
+      
+      .audio-title {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+      }
+      
+      .audio-description {
+        color: #666;
+        margin-bottom: 20px;
+      }
+      
+      .transcript-section {
+        margin-top: 30px;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 10px;
+      }
+      
+      .transcript-content {
+        line-height: 1.8;
+        font-size: 1.1rem;
+      }
+      
+      .vocabulary-section {
+        margin-top: 30px;
+      }
+      
+      .vocab-item {
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #eee;
+      }
+      
+      .back-button {
+        margin: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+      <header class="bg-primary text-white py-3">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <h1 class="mb-0">Language Platform</h1>
+              <p class="mb-0">Вивчайте мови де завгодно і коли завгодно</p>
+            </div>
+            <div class="col-md-6 text-md-end mt-3 mt-md-0">
+              <div class="d-flex justify-content-md-end gap-2">
+                <button class="btn btn-light btn-sm"><i class="bi bi-translate me-1"></i> Змінити мову</button>
+                <button class="btn btn-outline-light btn-sm"><i class="bi bi-person-circle me-1"></i> Увійти</button>
+                <button class="btn btn-success btn-sm"><i class="bi bi-box-arrow-in-right me-1"></i> Реєстрація</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+  
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border">
+        <div class="container-fluid">
+          <a class="navbar-brand d-lg-none" href="index.html">
+            <img src="https://via.placeholder.com/30" alt="Лого" width="30" height="30">
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav list">
+              <li class="nav-item">
+                <a class="nav-link highlights active" aria-current="page" href="lessons.html">Уроки</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link highlights" href="myProgress.html">Мій прогрес</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link highlights" href="practice.html">Практика</a>
+              </li>
+            </ul>
+            <form class="d-flex ms-auto">
+              <div class="input-group">
+                <input class="form-control" type="search" placeholder="Пошук уроків..." aria-label="Search">
+                <button class="btn btn-outline-primary" type="submit"><i class="bi bi-search"></i></button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+    <div class="container">
+      <div class="back-button">
+        <a href="lessons.html" class="btn btn-outline-secondary">
+          <i class="bi bi-arrow-left whiteText"></i> Назад до уроків
+        </a>
+      </div>
+      
+      <div class="audio-container">
+        <div class="audio-player">
+          <img src="https://i.pinimg.com/474x/22/37/c7/2237c7bf07262bcfcf2e9367b8a47c63.jpg" alt="Побутова лексика" class="audio-player-image">
+          <h2>Побутова лексика</h2>
+          <div class="audio-controls">
+            <span class="text-muted">0:00</span>
+            <div class="audio-controls-buttons mx-4">
+              <i class="bi bi-skip-backward mx-3"></i>
+              <i class="bi bi-play-circle-fill mx-3"></i>
+              <i class="bi bi-skip-forward mx-3"></i>
+            </div>
+            <span class="text-muted">15:30</span>
+          </div>
+          <div class="audio-progress">
+            <div class="progress" style="height: 6px;">
+              <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="mt-3 d-flex align-items-center">
+            <i class="bi bi-volume-up me-2"></i>
+            <input type="range" class="form-range" min="0" max="100" value="80" style="width: 100px;">
+            <div class="ms-3">
+              <select class="form-select form-select-sm">
+                <option>1.0x</option>
+                <option>1.25x</option>
+                <option>1.5x</option>
+                <option>1.75x</option>
+                <option>2.0x</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="audio-info">
+          <h1 class="audio-title">Побутова лексика: Аудіо-урок</h1>
+          <p class="audio-description">
+            Цей аудіо-урок допоможе вам засвоїти побутову лексику через активне слухання. Урок містить типові діалоги, фрази та слова, що застосовуються у повсякденному житті. Прослуховуйте матеріал кілька разів для кращого засвоєння вимови та інтонації.
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <button class="btn btn-sm btn-outline-primary me-2"><i class="bi bi-download"></i> Завантажити</button>
+              <button class="btn btn-sm btn-outline-success"><i class="bi bi-share"></i> Поділитися</button>
+            </div>
+            <div>
+              <span class="badge bg-secondary me-2">Тривалість: 15:30 хв</span>
+              <span class="badge bg-info">Рівень: A2-B1</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="transcript-section">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h3>Транскрипт уроку</h3>
+          <button class="btn btn-outline-primary btn-sm"><i class="bi bi-printer"></i> Друкувати</button>
+        </div>
+        <div class="transcript-content">
+          <p><strong>00:00</strong> Вітаю вас на уроці побутової лексики! Сьогодні ми вивчимо слова та фрази, які знадобляться вам у щоденному спілкуванні...</p>
+          <p><strong>01:30</strong> Почнемо з базових побутових предметів. Кожен дім має такі речі як: стіл, стілець, ліжко, шафа, диван...</p>
+          <p><strong>03:45</strong> Тепер перейдемо до кухонного приладдя: тарілка, чашка, виделка, ніж, ложка, каструля, сковорідка...</p>
+          <p><strong>05:20</strong> Важливо знати також назви продуктів харчування: хліб, молоко, сир, м'ясо, риба, овочі, фрукти...</p>
+          <p><strong>08:10</strong> Давайте розглянемо типовий діалог у магазині: "Добрий день! Скажіть, будь ласка, де я можу знайти молочні продукти?"...</p>
+          <p><strong>10:45</strong> А тепер практичне завдання. Спробуйте перекласти наступні фрази...</p>
+        </div>
+      </div>
+      
+      <div class="vocabulary-section">
+        <h3 class="mb-4">Ключові слова та фрази</h3>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="vocab-item">
+              <h5>Побутові предмети</h5>
+              <p>стіл - <em>table</em></p>
+              <p>ліжко - <em>bed</em></p>
+              <p>шафа - <em>wardrobe, cabinet</em></p>
+              <p>диван - <em>sofa, couch</em></p>
+              <button class="btn btn-sm btn-outline-primary">Додати до словника</button>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="vocab-item">
+              <h5>Кухонне приладдя</h5>
+              <p>тарілка - <em>plate</em></p>
+              <p>чашка - <em>cup</em></p>
+              <p>виделка - <em>fork</em></p>
+              <p>ніж - <em>knife</em></p>
+              <button class="btn btn-sm btn-outline-primary">Додати до словника</button>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="vocab-item">
+              <h5>Продукти харчування</h5>
+              <p>хліб - <em>bread</em></p>
+              <p>молоко - <em>milk</em></p>
+              <p>сир - <em>cheese</em></p>
+              <p>м'ясо - <em>meat</em></p>
+              <button class="btn btn-sm btn-outline-primary">Додати до словника</button>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="vocab-item">
+              <h5>Корисні фрази</h5>
+              <p>Добрий день! - <em>Good afternoon!</em></p>
+              <p>Скільки це коштує? - <em>How much does it cost?</em></p>
+              <p>Де я можу знайти...? - <em>Where can I find...?</em></p>
+              <p>Дякую! - <em>Thank you!</em></p>
+              <button class="btn btn-sm btn-outline-primary">Додати до словника</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer mt-5 py-4 bg-light border-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <h5>Про платформу</h5>
+            <p>Сучасна платформа для вивчення української мови. Різноманітні уроки, практичні завдання та персоналізований підхід.</p>
+          </div>
+          <div class="col-md-4 mb-3">
+            <h5>Швидкі посилання</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html#lessons" class="text-decoration-none">Уроки</a></li>
+              <li><a href="index.html#progress" class="text-decoration-none">Мій прогрес</a></li>
+              <li><a href="index.html#practice" class="text-decoration-none">Практика</a></li>
+              <li><a href="#" class="text-decoration-none">Контакти</a></li>
+              <li><a href="#" class="text-decoration-none">Про нас</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 mb-3">
+            <h5>Зв'язатися з нами</h5>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-envelope"></i> info@ukrmova.com</li>
+              <li><i class="bi bi-telephone"></i> +380-00-000-000</li>
+              <li class="mt-3">
+                <div class="social-icons">
+                  <a href="#" class="me-2"><i class="bi bi-facebook"></i></a>
+                  <a href="#" class="me-2"><i class="bi bi-instagram"></i></a>
+                  <a href="#" class="me-2"><i class="bi bi-telegram"></i></a>
+                  <a href="#" class="me-2"><i class="bi bi-youtube"></i></a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-12 text-center">
+            <p class="mb-0">© 2025 Українська мова онлайн. Всі права захищені.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
