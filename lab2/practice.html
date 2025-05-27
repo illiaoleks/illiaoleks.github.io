@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вивчення української мови</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <style>
+    .stats-card {
+      padding: 1rem;
+      border: 1px solid #dee2e6;
+      border-radius: 0.5rem;
+      background-color: #f8f9fa;
+    }
+    .stats-number {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #007bff;
+    }
+    .badge-lg {
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      margin: 0.25rem;
+    }
+    .quick-test {
+      background-color: #f8f9fa;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .card {
+      height: 100%;
+    }
+    .card-body {
+      display: flex;
+      flex-direction: column;
+    }
+    .btn-fixed-size {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="bg-primary text-white py-3">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h1 class="mb-0">Language Platform</h1>
+          <p class="mb-0">Вивчайте мови де завгодно і коли завгодно</p>
+        </div>
+        <div class="col-md-6 text-md-end mt-3 mt-md-0">
+          <div class="d-flex justify-content-md-end gap-2">
+            <button class="btn btn-light btn-sm"><i class="bi bi-translate me-1"></i> Змінити мову</button>
+            <button class="btn btn-outline-light btn-sm"><i class="bi bi-person-circle me-1"></i> Увійти</button>
+            <button class="btn btn-success btn-sm"><i class="bi bi-box-arrow-in-right me-1"></i> Реєстрація</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light border">
+    <div class="container-fluid">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav list">
+          <li class="nav-item">
+            <a class="nav-link highlights " aria-current="page" href="lessons.html">Уроки</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link highlights" href="myProgress.html">Мій прогрес</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link highlights active" href="practice.html">Практика</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="main-section">
+    <div class="container">
+      <h1 class="text-center mb-4">Практика української мови</h1>
+      <p class="text-center mb-5">Оберіть тип вправи для покращення ваших навичок</p>
+      
+      <div class="quick-test">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <h4>Випадковий тест</h4>
+            <p>Хочете перевірити свої знання прямо зараз? Розпочніть випадковий тест з різних тем української мови та перевірте свій рівень!</p>
+          </div>
+          <div class="col-md-4 text-center">
+            <button class="btn btn-warning btn-lg btn-fixed-size">Розпочати випадковий тест</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="mb-0">Тестування</h5>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p>Перевірте свої знання з різних тем та розділів української мови</p>
+              <ul class="list-unstyled">
+                <li><i class="bi bi-check-circle"></i> Граматика</li>
+                <li><i class="bi bi-check-circle"></i> Лексика</li>
+                <li><i class="bi bi-check-circle"></i> Правопис</li>
+              </ul>
+              <button class="btn btn-primary mt-auto btn-fixed-size">Почати тест</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="mb-0">Діалоги</h5>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p>Практикуйте розмовну українську мову в інтерактивних діалогах</p>
+              <ul class="list-unstyled">
+                <li><i class="bi bi-check-circle"></i> Щоденні розмови</li>
+                <li><i class="bi bi-check-circle"></i> Ділова українська</li>
+                <li><i class="bi bi-check-circle"></i> Культурні теми</li>
+              </ul>
+              <a href="chatBot.html">
+                <button class="btn btn-primary mt-auto btn-fixed-size">Розпочати діалог</button>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="mb-0">Вправи</h5>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p>Закріпіть вивчений матеріал за допомогою практичних завдань</p>
+              <ul class="list-unstyled">
+                <li><i class="bi bi-check-circle"></i> Заповнення пропусків</li>
+                <li><i class="bi bi-check-circle"></i> Виправлення помилок</li>
+                <li><i class="bi bi-check-circle"></i> Переклад речень</li>
+              </ul>
+              <button class="btn btn-primary mt-auto btn-fixed-size">Виконати вправи</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="progress-section">
+        <h3 class="text-center mb-4">Ваш прогрес</h3>
+        <div class="row text-center">
+          <div class="col-md-3 mb-3">
+            <div class="stats-card">
+              <div class="stats-number">78%</div>
+              <div>Загальний прогрес</div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="stats-card">
+              <div class="stats-number">42</div>
+              <div>Пройдені уроки</div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="stats-card">
+              <div class="stats-number">835</div>
+              <div>Вивчені слова</div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="stats-card">
+              <div class="stats-number">12</div>
+              <div>Днів поспіль</div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-3">
+          <button class="btn btn-success btn-fixed-size">Переглянути детальну статистику</button>
+        </div>
+      </div>
+      
+      <h3 class="text-center my-4">Рекомендовані теми</h3>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Правопис префіксів</h5>
+              <p class="card-text">Вивчіть правила написання префіксів в українській мові. Закріпіть знання з допомогою інтерактивних вправ.</p>
+              <button class="btn btn-outline-primary btn-fixed-size">Перейти до теми</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Наголоси в іменниках</h5>
+              <p class="card-text">Складні випадки наголошування іменників. Слухайте правильну вимову та практикуйтеся.</p>
+              <button class="btn btn-outline-primary btn-fixed-size">Перейти до теми</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <h4 class="text-center my-4">Популярні теги</h4>
+      <div class="text-center mb-5">
+        <span class="badge bg-primary badge-lg">Граматика</span>
+        <span class="badge bg-success badge-lg">Лексика</span>
+        <span class="badge bg-info badge-lg">Фразеологізми</span>
+        <span class="badge bg-warning badge-lg">Правопис</span>
+        <span class="badge bg-danger badge-lg">Наголоси</span>
+        <span class="badge bg-secondary badge-lg">Синтаксис</span>
+        <span class="badge bg-dark badge-lg">Пунктуація</span>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer mt-5 py-4 bg-light border-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <h5>Про платформу</h5>
+          <p>Сучасна платформа для вивчення мов. Різноманітні уроки, практичні завдання та персоналізований підхід.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5>Швидкі посилання</h5>
+          <ul class="list-unstyled">
+            <li><a href="#lessons" class="text-decoration-none">Уроки</a></li>
+            <li><a href="#progress" class="text-decoration-none">Мій прогрес</a></li>
+            <li><a href="#practice" class="text-decoration-none">Практика</a></li>
+            <li><a href="#" class="text-decoration-none">Контакти</a></li>
+            <li><a href="#" class="text-decoration-none">Про нас</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5>Зв'язатися з нами</h5>
+          <ul class="list-unstyled">
+            <li><i class="bi bi-envelope"></i> info@ukrmova.com</li>
+            <li><i class="bi bi-telephone"></i> +380-00-000-000</li>
+            <li class="mt-3">
+              <div class="social-icons">
+                <a href="#" class="me-2"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="me-2"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="me-2"><i class="bi bi-telegram"></i></a>
+                <a href="#" class="me-2"><i class="bi bi-youtube"></i></a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-12 text-center">
+          <p class="mb-0">© 2025 Українська мова онлайн. Всі права захищені.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

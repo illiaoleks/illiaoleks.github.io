@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Діалог з чат-ботом | Вивчення української мови</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <style>
+    .chat-container {
+      height: 400px;
+      overflow-y: auto;
+      border: 1px solid #dee2e6;
+      border-radius: 0.25rem;
+      background-color: #f8f9fa;
+      padding: 1rem;
+    }
+    
+    .chat-message {
+      margin-bottom: 1rem;
+      max-width: 80%;
+    }
+    
+    .bot-message {
+      background-color: #e9ecef;
+      border-radius: 1rem 1rem 1rem 0;
+      padding: 0.75rem;
+      margin-right: auto;
+    }
+    
+    .user-message {
+      background-color: #007bff;
+      color: white;
+      border-radius: 1rem 1rem 0 1rem;
+      padding: 0.75rem;
+      margin-left: auto;
+    }
+    
+    .topic-card {
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    
+    .topic-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .difficulty-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  </style>
+</head>
+<body class="chatBot">
+  <header class="bg-primary text-white py-3">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h1 class="mb-0">Language Platform</h1>
+          <p class="mb-0">Вивчайте мови де завгодно і коли завгодно</p>
+        </div>
+        <div class="col-md-6 text-md-end mt-3 mt-md-0">
+          <div class="d-flex justify-content-md-end gap-2">
+            <button class="btn btn-light btn-sm"><i class="bi bi-translate me-1"></i> Змінити мову</button>
+            <button class="btn btn-outline-light btn-sm"><i class="bi bi-person-circle me-1"></i> Увійти</button>
+            <button class="btn btn-success btn-sm"><i class="bi bi-box-arrow-in-right me-1"></i> Реєстрація</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light border">
+    <div class="container-fluid">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav list me-auto">
+          <li class="nav-item">
+            <a class="nav-link highlights" aria-current="page" href="lessons.html">Уроки</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link highlights" href="myProgress.html">Мій прогрес</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link highlights active" href="practice.html">Практика</a>
+          </li>
+        </ul>
+        <div class="d-flex">
+          <a href="profile.html" class="btn btn-outline-primary me-2">
+            <i class="bi bi-person-circle"></i> Профіль
+          </a>
+          <div class="dropdown">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              🇺🇦 UA
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+              <li><a class="dropdown-item" href="#">🇬🇧 EN</a></li>
+              <li><a class="dropdown-item" href="#">🇩🇪 DE</a></li>
+              <li><a class="dropdown-item" href="#">🇵🇱 PL</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Головний вміст -->
+  <div class="container my-4">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="card mb-4">
+          <div class="card-header">
+            <h5 class="mb-0">Теми для діалогів</h5>
+          </div>
+          <div class="list-group list-group-flush">
+            <a href="#" class="list-group-item list-group-item-action active">
+              <i class="bi bi-chat-dots me-2"></i> Знайомство
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+              <i class="bi bi-shop me-2"></i> У магазині
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+              <i class="bi bi-cup-hot me-2"></i> У кафе
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+              <i class="bi bi-building me-2"></i> Орендування житла
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+              <i class="bi bi-bus-front me-2"></i> Громадський транспорт
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+              <i class="bi bi-briefcase me-2"></i> Співбесіда на роботу
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+              <i class="bi bi-hospital me-2"></i> У лікаря
+            </a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <h5 class="mb-0">Налаштування</h5>
+          </div>
+          <div class="card-body">
+            <div class="mb-3">
+              <label for="difficultyRange" class="form-label">Рівень складності</label>
+              <input type="range" class="form-range" min="1" max="3" step="1" id="difficultyRange">
+              <div class="d-flex justify-content-between">
+                <small>Початковий</small>
+                <small>Середній</small>
+                <small>Просунутий</small>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Режим спілкування</label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chatMode" id="guidedMode" checked>
+                <label class="form-check-label" for="guidedMode">
+                  З підказками
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chatMode" id="freeMode">
+                <label class="form-check-label" for="freeMode">
+                  Вільне спілкування
+                </label>
+              </div>
+            </div>
+            <div class="form-check form-switch mb-0">
+              <input class="form-check-input" type="checkbox" id="correctionSwitch" checked>
+              <label class="form-check-label" for="correctionSwitch">Виправляти помилки</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-9">
+        <div class="card">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <h4 class="mb-0">Діалог: Знайомство</h4>
+            <span class="badge bg-primary">Початковий рівень</span>
+          </div>
+          <div class="card-body">
+            <div class="mb-3">
+              <p class="text-muted">Спробуйте познайомитися з чат-ботом українською. Розкажіть своє ім'я, звідки ви, та чим займаєтесь. Запитайте у бота подібну інформацію.</p>
+            </div>
+            
+            <div class="chat-container mb-3" id="chatContainer">
+              <div class="chat-message bot-message">
+                <div class="mb-1"><strong>Чат-бот</strong></div>
+                Привіт! Мене звати Мовко, я ваш віртуальний помічник для вивчення української мови. Давай познайомимося! Як тебе звати?
+              </div>
+              
+              <div class="chat-message user-message">
+                <div class="mb-1 text-end"><strong>Ви</strong></div>
+                Привіт! Мене звати Олександр. А звідки ти?
+              </div>
+              
+              <div class="chat-message bot-message">
+                <div class="mb-1"><strong>Чат-бот</strong></div>
+                Дуже приємно познайомитись, Олександре! Я віртуальний помічник, тому я не маю конкретного місця проживання. Але я розмовляю українською і допомагаю людям вивчати цю чудову мову. А ти звідки? І чим займаєшся?
+              </div>
+              
+              <div class="chat-message user-message">
+                <div class="mb-1 text-end"><strong>Ви</strong></div>
+                Я з Канади, але мої бабуся і дідусь з України. Я програміст і хочу вивчити українську, щоб спілкуватися з родичами.
+              </div>
+              
+              <div class="chat-message bot-message">
+                <div class="mb-1"><strong>Чат-бот</strong></div>
+                Це чудово, що ти хочеш вивчити мову своїх предків! Багато українців емігрували до Канади, там велика українська діаспора. Які теми тебе найбільше цікавлять для розмови українською?
+              </div>
+            </div>
+            
+            <div class="input-group">
+              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-lightbulb"></i> Підказки
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Мене звати...</a></li>
+                <li><a class="dropdown-item" href="#">Я приїхав/приїхала з...</a></li>
+                <li><a class="dropdown-item" href="#">Я працюю...</a></li>
+                <li><a class="dropdown-item" href="#">Я вивчаю українську, тому що...</a></li>
+              </ul>
+              <input type="text" class="form-control" placeholder="Введіть ваше повідомлення..." aria-label="Повідомлення">
+              <button class="btn btn-primary" type="button">
+                <i class="bi bi-send"></i> Надіслати
+              </button>
+            </div>
+          </div>
+          <div class="card-footer d-flex justify-content-between">
+            <button class="btn btn-outline-danger">
+              <i class="bi bi-arrow-counterclockwise"></i> Почати спочатку
+            </button>
+            <div>
+              <button class="btn btn-outline-secondary me-2">
+                <i class="bi bi-volume-up"></i> Озвучити
+              </button>
+              <button class="btn btn-outline-success">
+                <i class="bi bi-translate"></i> Показати переклад
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <h4 class="mt-4 mb-3">Рекомендовані діалоги</h4>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <div class="card topic-card h-100">
+              <div class="card-body">
+                <span class="badge bg-success difficulty-badge">Початковий</span>
+                <h5 class="card-title"><i class="bi bi-shop text-primary me-2"></i>У магазині</h5>
+                <p class="card-text">Навчіться спілкуватися у магазині, запитувати про товари та їх ціни.</p>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-sm btn-primary w-100">Розпочати діалог</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 mb-3">
+            <div class="card topic-card h-100">
+              <div class="card-body">
+                <span class="badge bg-warning difficulty-badge">Середній</span>
+                <h5 class="card-title"><i class="bi bi-cup-hot text-primary me-2"></i>У кафе</h5>
+                <p class="card-text">Практикуйте замовлення їжі та напоїв, спілкування з офіціантом.</p>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-sm btn-primary w-100">Розпочати діалог</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Футер -->
+  <footer class="footer mt-5 py-4 bg-light border-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <h5>Про платформу</h5>
+          <p>Сучасна платформа для вивчення мов. Різноманітні уроки, практичні завдання та персоналізований підхід.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5>Швидкі посилання</h5>
+          <ul class="list-unstyled">
+            <li><a href="#lessons" class="text-decoration-none">Уроки</a></li>
+            <li><a href="#progress" class="text-decoration-none">Мій прогрес</a></li>
+            <li><a href="#practice" class="text-decoration-none">Практика</a></li>
+            <li><a href="#" class="text-decoration-none">Контакти</a></li>
+            <li><a href="#" class="text-decoration-none">Про нас</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5>Зв'язатися з нами</h5>
+          <ul class="list-unstyled">
+            <li><i class="bi bi-envelope"></i> info@ukrmova.com</li>
+            <li><i class="bi bi-telephone"></i> +380-00-000-000</li>
+            <li class="mt-3">
+              <div class="social-icons">
+                <a href="#" class="me-2"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="me-2"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="me-2"><i class="bi bi-telegram"></i></a>
+                <a href="#" class="me-2"><i class="bi bi-youtube"></i></a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-12 text-center">
+          <p class="mb-0">© 2025 Українська мова онлайн. Всі права захищені.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

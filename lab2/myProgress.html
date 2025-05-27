@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Language Learning Platform</title>
+
+  </head>
+  <body>
+    <header class="bg-primary text-white py-3">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h1 class="mb-0">Language Platform</h1>
+            <p class="mb-0">Вивчайте мови де завгодно і коли завгодно</p>
+          </div>
+          <div class="col-md-6 text-md-end mt-3 mt-md-0">
+            <div class="d-flex justify-content-md-end gap-2">
+              <button class="btn btn-light btn-sm"><i class="bi bi-translate me-1"></i> Змінити мову</button>
+              <button class="btn btn-outline-light btn-sm"><i class="bi bi-person-circle me-1"></i> Увійти</button>
+              <button class="btn btn-success btn-sm"><i class="bi bi-box-arrow-in-right me-1"></i> Реєстрація</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border">
+      <div class="container-fluid">
+      
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav list">
+            <li class="nav-item">
+              <a class="nav-link highlights " aria-current="page" href="lessons.html">Уроки</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link highlights active" href="myProgress.html">Мій прогрес</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link highlights" href="practice.html">Практика</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container my-4">
+      <div class="row">
+        <div class="col-lg-8">
+          <section id="progress" class="progress-section">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <h2>Мій прогрес</h2>
+              <div class="btn-group">
+                <button type="button" class="btn btn-outline-primary active">Тиждень</button>
+                <button type="button" class="btn btn-outline-primary">Місяць</button>
+                <button type="button" class="btn btn-outline-primary">Рік</button>
+              </div>
+            </div>
+
+            <ul class="nav nav-tabs mb-4" id="progressTabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview" type="button" role="tab" aria-controls="overview" aria-selected="true">Огляд</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="skills-tab" data-bs-toggle="tab" data-bs-target="#skills" type="button" role="tab" aria-controls="skills" aria-selected="false">Навички</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="vocabulary-tab" data-bs-toggle="tab" data-bs-target="#vocabulary" type="button" role="tab" aria-controls="vocabulary" aria-selected="false">Словник</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="achievements-tab" data-bs-toggle="tab" data-bs-target="#achievements" type="button" role="tab" aria-controls="achievements" aria-selected="false">Досягнення</button>
+              </li>
+            </ul>
+
+            <div class="tab-content" id="progressTabsContent">
+              <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="progress-card">
+                      <div class="d-flex justify-content-between">
+                        <h3>Рівень володіння</h3>
+                        <span class="badge bg-primary fs-5">B2</span>
+                      </div>
+                      <p>До рівня C1 залишилось: 35%</p>
+                      <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">B2</div>
+                      </div>
+                      <div class="d-flex justify-content-between mt-2">
+                        <small>A1</small>
+                        <small>A2</small>
+                        <small>B1</small>
+                        <small>B2</small>
+                        <small>C1</small>
+                        <small>C2</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="progress-card">
+                      <h3>Статистика</h3>
+                      <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          Днів вивчення
+                          <span class="badge bg-primary rounded-pill">45</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          Завершені уроки
+                          <span class="badge bg-primary rounded-pill">12</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          Загальний час
+                          <span class="badge bg-primary rounded-pill">24 год</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          Вивчені слова
+                          <span class="badge bg-primary rounded-pill">320</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="progress-card mt-4">
+                  <h3>Активність цього тижня</h3>
+
+                  <div class="streak-calendar">
+                    <div class="calendar-day day-completed">Пн</div>
+                    <div class="calendar-day day-completed">Вт</div>
+                    <div class="calendar-day day-completed">Ср</div>
+                    <div class="calendar-day day-completed">Чт</div>
+                    <div class="calendar-day day-missed">Пт</div>
+                    <div class="calendar-day day-completed">Сб</div>
+                    <div class="calendar-day day-current">Нд</div>
+                  </div>
+                  <div class="mt-3">
+                    <p><i class="bi bi-fire text-danger"></i> Поточна серія: <strong>3 дні</strong> | Найдовша серія: <strong>30 днів</strong></p>
+                    <p>Тижнева ціль: 5 годин</p>
+                    <div class="weekly-goal">
+                      <div class="weekly-goal-progress" style="width: 70%;"></div>
+                    </div>
+                    <small>3.5 / 5 годин</small>
+                  </div>
+                </div>
+                <div class="progress-card mt-4">
+                  <h3>Таймер навчання</h3>
+                  <div class="study-timer text-center">
+                    <div class="timer-display display-4 mb-3">00:00:00</div>
+                    <div class="btn-group" role="group">
+                      <button type="button" class="btn btn-success" id="startTimer">
+                        <i class="bi bi-play-fill"></i> Почати
+                      </button>
+                      <button type="button" class="btn btn-danger" id="stopTimer" disabled>
+                        <i class="bi bi-stop-fill"></i> Зупинити
+                      </button>
+                      <button type="button" class="btn btn-secondary" id="resetTimer">
+                        <i class="bi bi-arrow-counterclockwise"></i> Скинути
+                      </button>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="progress-card mt-4">
+                  <h3>Нещодавня активність</h3>
+                  <div class="recent-activity-item">
+                    <p class="mb-1"><strong>Урок завершено:</strong> "Умовний спосіб дієслів"</p>
+                    <small class="text-muted">Сьогодні, 14:32 | Оцінка: 85%</small>
+                  </div>
+                  <div class="recent-activity-item">
+                    <p class="mb-1"><strong>Практика:</strong> Аудіювання "Українські традиції"</p>
+                    <small class="text-muted">Вчора, 19:15 | Тривалість: 25 хв</small>
+                  </div>
+                  <div class="recent-activity-item">
+                    <p class="mb-1"><strong>Словник:</strong> Додано 15 нових слів</p>
+                    <small class="text-muted">10.03.2025, 20:45</small>
+                  </div>
+                  <div class="recent-activity-item">
+                    <p class="mb-1"><strong>Тест пройдено:</strong> "Відмінювання іменників"</p>
+                    <small class="text-muted">09.03.2025, 10:30 | Оцінка: 92%</small>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Skills Tab -->
+              <div class="tab-pane fade" id="skills" role="tabpanel" aria-labelledby="skills-tab">
+                <div class="progress-card">
+                  <h3>Мовні навички</h3>
+                  <div class="skill-progress">
+                    <div class="d-flex justify-content-between">
+                      <h5>Говоріння</h5>
+                      <span>70%</span>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar bg-success" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                  <div class="skill-progress">
+                    <div class="d-flex justify-content-between">
+                      <h5>Аудіювання</h5>
+                      <span>65%</span>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar bg-info" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                  <div class="skill-progress">
+                    <div class="d-flex justify-content-between">
+                      <h5>Читання</h5>
+                      <span>85%</span>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar bg-warning" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                  <div class="skill-progress">
+                    <div class="d-flex justify-content-between">
+                      <h5>Письмо</h5>
+                      <span>60%</span>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar bg-danger" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="progress-card mt-4">
+                  <h3>Граматичні теми</h3>
+                  <div class="skill-progress">
+                    <div class="d-flex justify-content-between">
+                      <h5>Відмінювання іменників</h5>
+                      <span>90%</span>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                  <div class="skill-progress">
+                    <div class="d-flex justify-content-between">
+                      <h5>Часи дієслів</h5>
+                      <span>75%</span>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                  <div class="skill-progress">
+                    <div class="d-flex justify-content-between">
+                      <h5>Прийменники</h5>
+                      <span>60%</span>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                  <div class="skill-progress">
+                    <div class="d-flex justify-content-between">
+                      <h5>Складносурядні речення</h5>
+                      <span>45%</span>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 45%;" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="recommendations-card mt-4">
+                  <h4><i class="bi bi-lightbulb"></i> Рекомендації для покращення</h4>
+                  <p>Базуючись на ваших результатах, ми рекомендуємо зосередитись на таких навичках:</p>
+                  <ol>
+                    <li>Більше практикуйте письмо — спробуйте щодня писати короткий текст українською</li>
+                    <li>Тренуйте використання прийменників у різних контекстах</li>
+                    <li>Приділіть увагу складним реченням та їх побудові</li>
+                  </ol>
+                  <a href="#" class="btn btn-primary mt-2">Отримати персоналізований план навчання</a>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="vocabulary" role="tabpanel" aria-labelledby="vocabulary-tab">
+                <div class="progress-card">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <h3>Мій словник</h3>
+                    <div>
+                      <span class="badge bg-primary">320 слів</span>
+                      <button class="btn btn-sm btn-outline-success ms-2"><i class="bi bi-plus-lg"></i> Додати слова</button>
+                    </div>
+                  </div>
+                  
+                  <div class="input-group my-3">
+                    <input type="text" class="form-control" placeholder="Пошук слів..." aria-label="Пошук слів">
+                    <button class="btn btn-outline-secondary" type="button"><i class="bi bi-search"></i></button>
+                  </div>
+                  
+                  <div class="mb-3">
+                    <select class="form-select">
+                      <option selected>Сортувати за...</option>
+                      <option>Алфавітом (А-Я)</option>
+                      <option>Алфавітом (Я-А)</option>
+                      <option>Нещодавно додані</option>
+                      <option>Складність (зростання)</option>
+                      <option>Складність (спадання)</option>
+                    </select>
+                  </div>
+                  
+                  <div class="vocabulary-list mt-4">
+                    <div class="vocabulary-item">
+                      <div>
+                        <strong>спілкування</strong> - communication
+                      </div>
+                      <div>
+                        <span class="badge bg-success">Вивчено</span>
+                        <button class="btn btn-sm btn-outline-primary ms-1"><i class="bi bi-volume-up"></i></button>
+                      </div>
+                    </div>
+                    <div class="vocabulary-item">
+                      <div>
+                        <strong>доброзичливість</strong> - benevolence, goodwill
+                      </div>
+                      <div>
+                        <span class="badge bg-warning">Вивчається</span>
+                        <button class="btn btn-sm btn-outline-primary ms-1"><i class="bi bi-volume-up"></i></button>
+                      </div>
+                    </div>
+                    <div class="vocabulary-item">
+                      <div>
+                        <strong>враження</strong> - impression
+                      </div>
+                      <div>
+                        <span class="badge bg-success">Вивчено</span>
+                        <button class="btn btn-sm btn-outline-primary ms-1"><i class="bi bi-volume-up"></i></button>
+                      </div>
+                    </div>
+                    <div class="vocabulary-item">
+                      <div>
+                        <strong>запропонувати</strong> - to offer, to suggest
+                      </div>
+                      <div>
+                        <span class="badge bg-danger">Повторити</span>
+                        <button class="btn btn-sm btn-outline-primary ms-1"><i class="bi bi-volume-up"></i></button>
+                      </div>
+                    </div>
+                    <div class="vocabulary-item">
+                      <div>
+                        <strong>розвиток</strong> - development
+                      </div>
+                      <div>
+                        <span class="badge bg-success">Вивчено</span>
+                        <button class="btn btn-sm btn-outline-primary ms-1"><i class="bi bi-volume-up"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <nav aria-label="..." class="mt-3">
+                    <ul class="pagination justify-content-center">
+                      <li class="page-item disabled">
+                        <a class="page-link">Попередня</a>
+                      </li>
+                      <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">Наступна</a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+                
+                <div class="progress-card mt-4">
+                  <h3>Тематичні групи слів</h3>
+                  <div class="row mt-3">
+                    <div class="col-md-4 mb-3">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Подорожі <span class="badge bg-primary">42</span></h5>
+                          <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Їжа <span class="badge bg-primary">65</span></h5>
+                          <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Робота <span class="badge bg-primary">38</span></h5>
+                          <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Почуття <span class="badge bg-primary">29</span></h5>
+                          <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 45%;" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Технології <span class="badge bg-primary">34</span></h5>
+                          <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Природа <span class="badge bg-primary">51</span></h5>
+                          <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="achievements" role="tabpanel" aria-labelledby="achievements-tab">
+                <div class="progress-card">
+                  <h3>Мої досягнення</h3>
+                  <div class="row mt-3">
+                    <div class="col-md-6 mb-3">
+                      <div class="card bg-light">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <span class="achievement-icon">🏆</span>
+                            <div>
+                              <h5 class="card-title mb-1">Послідовність 30 днів</h5>
+                              <p class="card-text mb-1">Вивчайте українську 30 днів поспіль</p>
+                              <div class="progress mt-2">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="card bg-light">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <span class="achievement-icon">📚</span>
+                            <div>
+                              <h5 class="card-title mb-1">Вивчено 3 теми</h5>
+                              <p class="card-text mb-1">Завершіть 3 тематичні модулі</p>
+                              <div class="progress mt-2">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="card bg-light">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <span class="achievement-icon">🗣️</span>
+                            <div>
+                              <h5 class="card-title mb-1">Перший діалог</h5>
+                              <p class="card-text mb-1">Проведіть перший діалог українською</p>
+                              <div class="progress mt-2">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="card bg-light">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <span class="achievement-icon">💯</span>
+                            <div>
+                              <h5 class="card-title mb-1">Ідеальний тест</h5>
+                              <p class="card-text mb-1<h5 class="card-title mb-1">Ідеальний тест</h5>
+                                <p class="card-text mb-1">Отримайте 100% правильних відповідей в тесті</p>
+                                <div class="progress mt-2">
+                                  <div class="progress-bar bg-warning" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <div class="card bg-light">
+                          <div class="card-body">
+                            <div class="d-flex align-items-center">
+                              <span class="achievement-icon">📝</span>
+                              <div>
+                                <h5 class="card-title mb-1">Письменник</h5>
+                                <p class="card-text mb-1">Напишіть 5 повних есе українською</p>
+                                <div class="progress mt-2">
+                                  <div class="progress-bar bg-warning" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <div class="card bg-light">
+                          <div class="card-body">
+                            <div class="d-flex align-items-center">
+                              <span class="achievement-icon">📘</span>
+                              <div>
+                                <h5 class="card-title mb-1">Словниковий запас</h5>
+                                <p class="card-text mb-1">Вивчіть 500 слів</p>
+                                <div class="progress mt-2">
+                                  <div class="progress-bar bg-info" role="progressbar" style="width: 64%;" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100">64%</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <div class="card bg-light">
+                          <div class="card-body">
+                            <div class="d-flex align-items-center">
+                              <span class="achievement-icon">🎧</span>
+                              <div>
+                                <h5 class="card-title mb-1">Слухач</h5>
+                                <p class="card-text mb-1">Прослухайте 10 годин аудіоматеріалів</p>
+                                <div class="progress mt-2">
+                                  <div class="progress-bar bg-info" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <div class="card bg-light">
+                          <div class="card-body">
+                            <div class="d-flex align-items-center">
+                              <span class="achievement-icon">🎭</span>
+                              <div>
+                                <h5 class="card-title mb-1">Комунікатор</h5>
+                                <p class="card-text mb-1">Спілкуйтеся з 5 різними співрозмовниками</p>
+                                <div class="progress mt-2">
+                                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="progress-card mt-4">
+                    <h3>Наступні цілі</h3>
+                    <div class="row mt-3">
+                      <div class="col-md-4 mb-3">
+                        <div class="card">
+                          <div class="card-body text-center">
+                            <div class="display-4 mb-2">🌟</div>
+                            <h5 class="card-title">Досягнути рівня C1</h5>
+                            <p class="card-text text-muted">Залишилось 35%</p>
+                            <button class="btn btn-sm btn-outline-primary">Переглянути план</button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <div class="card">
+                          <div class="card-body text-center">
+                            <div class="display-4 mb-2">📱</div>
+                            <h5 class="card-title">Серія 60 днів</h5>
+                            <p class="card-text text-muted">Прогрес: 45/60</p>
+                            <button class="btn btn-sm btn-outline-primary">Деталі</button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <div class="card">
+                          <div class="card-body text-center">
+                            <div class="display-4 mb-2">🏅</div>
+                            <h5 class="card-title">Розмовна майстерність</h5>
+                            <p class="card-text text-muted">10 годин розмовної практики</p>
+                            <button class="btn btn-sm btn-outline-primary">Почати</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          
+          <div class="col-lg-4">
+            <div class="progress-card">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h3>Рекомендації</h3>
+                <button class="btn btn-sm btn-outline-primary">Оновити</button>
+              </div>
+              
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="card-title">Сьогоднішній план</h5>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                      <div>
+                        <i class="bi bi-book text-primary"></i> Урок: Умовний спосіб дієслів
+                      </div>
+                      <button class="btn btn-sm btn-outline-primary">Почати</button>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                      <div>
+                        <i class="bi bi-journal-text text-warning"></i> Практика: Письмо
+                      </div>
+                      <button class="btn btn-sm btn-outline-primary">Почати</button>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                      <div>
+                        <i class="bi bi-card-list text-info"></i> Повторення: 15 слів
+                      </div>
+                      <button class="btn btn-sm btn-outline-primary">Почати</button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="card-title">Наступні уроки</h5>
+                  <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h6 class="mb-1">Прийменники руху</h6>
+                        <small class="text-muted">B2</small>
+                      </div>
+                      <p class="mb-1">Вивчіть правила використання прийменників для опису руху</p>
+                      <small><i class="bi bi-clock"></i> Приблизно 45 хв</small>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h6 class="mb-1">Складні речення</h6>
+                        <small class="text-muted">B2</small>
+                      </div>
+                      <p class="mb-1">Навчіться будувати складні речення з кількома підрядними</p>
+                      <small><i class="bi bi-clock"></i> Приблизно 60 хв</small>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h6 class="mb-1">Професійна лексика</h6>
+                        <small class="text-muted">B2+</small>
+                      </div>
+                      <p class="mb-1">Розширте словниковий запас для ділового спілкування</p>
+                      <small><i class="bi bi-clock"></i> Приблизно 50 хв</small>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="card-title">Корисні ресурси</h5>
+                  <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action">
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-newspaper text-primary me-2"></i>
+                        <div>
+                          <h6 class="mb-0">Новини спрощеною українською</h6>
+                          <small>Для рівнів B1-B2</small>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-headphones text-success me-2"></i>
+                        <div>
+                          <h6 class="mb-0">Подкасти українською</h6>
+                          <small>Різні теми та рівні складності</small>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-people text-warning me-2"></i>
+                        <div>
+                          <h6 class="mb-0">Розмовні клуби</h6>
+                          <small>Практика з носіями мови</small>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Цитата дня</h5>
+                  <figure>
+                    <blockquote class="blockquote">
+                      <p>Хто не знає чужих мов, той нічого не знає і про свою.</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                      Йоганн Вольфганг фон Гете
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row mt-4">
+          <div class="col-12">
+            <div class="progress-card">
+              <h3>Сертифікація</h3>
+              <p>Підготуйтеся до міжнародного іспиту з української мови та отримайте офіційний сертифікат!</p>
+              <div class="row">
+                <div class="col-md-8">
+                  <h5>Ваша готовність до іспиту B2:</h5>
+                  <div class="progress mb-3">
+                    <div class="progress-bar" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">65%</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <ul class="list-group mb-3">
+                        <li class="list-group-item">
+                          <i class="bi bi-check-circle-fill text-success me-2"></i> Граматика: 75%
+                        </li>
+                        <li class="list-group-item">
+                          <i class="bi bi-check-circle-fill text-success me-2"></i> Лексика: 70%
+                        </li>
+                        <li class="list-group-item">
+                          <i class="bi bi-exclamation-circle-fill text-warning me-2"></i> Аудіювання: 60%
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-md-6">
+                      <ul class="list-group mb-3">
+                        <li class="list-group-item">
+                          <i class="bi bi-check-circle-fill text-success me-2"></i> Читання: 80%
+                        </li>
+                        <li class="list-group-item">
+                          <i class="bi bi-exclamation-circle-fill text-warning me-2"></i> Письмо: 55%
+                        </li>
+                        <li class="list-group-item">
+                          <i class="bi bi-exclamation-circle-fill text-warning me-2"></i> Говоріння: 60%
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 text-center">
+                  <button class="btn btn-primary">Підготуватися до іспиту</button>
+                  <p class="mt-2"><small>Наступний іспит: 15 квітня 2025</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="container-fluid bg-light py-4 mt-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 offset-md-2 text-center">
+              <h3>Запросіть друзів до вивчення української!</h3>
+              <p>Навчатися разом цікавіше та ефективніше. Запросіть друзів та отримайте бонусні дні преміум-доступу.</p>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Електронна пошта друга" aria-label="Електронна пошта друга">
+                <button class="btn btn-primary" type="button">Запросити</button>
+              </div>
+              <p><small>або поділіться посиланням:</small></p>
+              <div class="d-flex justify-content-center gap-2">
+                <button class="btn btn-outline-primary"><i class="bi bi-facebook"></i></button>
+                <button class="btn btn-outline-info"><i class="bi bi-telegram"></i></button>
+                <button class="btn btn-outline-success"><i class="bi bi-whatsapp"></i></button>
+                <button class="btn btn-outline-secondary"><i class="bi bi-envelope"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer class="footer mt-5 py-4 bg-light border-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <h5>Про платформу</h5>
+              <p>Сучасна платформа для вивчення мов. Різноманітні уроки, практичні завдання та персоналізований підхід.</p>
+            </div>
+            <div class="col-md-4 mb-3">
+              <h5>Швидкі посилання</h5>
+              <ul class="list-unstyled">
+                <li><a href="#lessons" class="text-decoration-none">Уроки</a></li>
+                <li><a href="#progress" class="text-decoration-none">Мій прогрес</a></li>
+                <li><a href="#practice" class="text-decoration-none">Практика</a></li>
+                <li><a href="#" class="text-decoration-none">Контакти</a></li>
+                <li><a href="#" class="text-decoration-none">Про нас</a></li>
+              </ul>
+            </div>
+            <div class="col-md-4 mb-3">
+              <h5>Зв'язатися з нами</h5>
+              <ul class="list-unstyled">
+                <li><i class="bi bi-envelope"></i> info@ukrmova.com</li>
+                <li><i class="bi bi-telephone"></i> +380-00-000-000</li>
+                <li class="mt-3">
+                  <div class="social-icons">
+                    <a href="#" class="me-2"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="me-2"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="me-2"><i class="bi bi-telegram"></i></a>
+                    <a href="#" class="me-2"><i class="bi bi-youtube"></i></a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-12 text-center">
+              <p class="mb-0">© 2025 Українська мова онлайн. Всі права захищені.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+      
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"
+      ></script>
+      <script src="progressScript.js"></script>
+    </body>
+  </html>

@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Текстовий урок | Українська мова онлайн</title>
+    <style>
+      .text-lesson-container {
+        margin: 30px auto;
+        max-width: 800px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      }
+      
+      .text-content {
+        padding: 30px;
+        background-color: #fff;
+        line-height: 1.8;
+      }
+      
+      .lesson-title {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        color: #333;
+      }
+      
+      .lesson-description {
+        color: #666;
+        margin-bottom: 20px;
+        font-style: italic;
+      }
+      
+      .lesson-controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        background-color: #f8f9fa;
+        border-bottom: 1px solid #e9ecef;
+      }
+      
+      .lesson-text {
+        margin-top: 20px;
+      }
+      
+      .lesson-text p {
+        margin-bottom: 15px;
+      }
+      
+      .vocabulary-section {
+        margin-top: 30px;
+        padding: 20px;
+        background-color: #f0f4ff;
+        border-radius: 10px;
+        border-left: 4px solid #4e73df;
+      }
+      
+      .vocabulary-item {
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px dashed #ccc;
+      }
+      
+      .vocabulary-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      
+      .exercise-section {
+        margin-top: 40px;
+        padding: 20px;
+        background-color: #f0fff4;
+        border-radius: 10px;
+        border-left: 4px solid #28a745;
+      }
+      
+      .nav-pills .nav-link.active {
+        background-color: #4e73df;
+      }
+      
+      .notes-section {
+        margin-top: 40px;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 10px;
+      }
+      
+      .back-button {
+        margin: 20px 0;
+      }
+      
+      .related-lessons {
+        margin-top: 40px;
+      }
+      
+      .related-lesson-card {
+        transition: transform 0.3s;
+      }
+      
+      .related-lesson-card:hover {
+        transform: translateY(-5px);
+      }
+      
+      .pronunciation {
+        color: #6c757d;
+        font-style: italic;
+      }
+      
+      .example {
+        color: #28a745;
+        font-style: italic;
+      }
+      
+      .translation {
+        color: #6c757d;
+      }
+    </style>
+  </head>
+  <body>
+
+    <header class="bg-primary text-white py-3">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h1 class="mb-0">Language Platform</h1>
+            <p class="mb-0">Вивчайте мови де завгодно і коли завгодно</p>
+          </div>
+          <div class="col-md-6 text-md-end mt-3 mt-md-0">
+            <div class="d-flex justify-content-md-end gap-2">
+              <button class="btn btn-light btn-sm"><i class="bi bi-translate me-1"></i> Змінити мову</button>
+              <button class="btn btn-outline-light btn-sm"><i class="bi bi-person-circle me-1"></i> Увійти</button>
+              <button class="btn btn-success btn-sm"><i class="bi bi-box-arrow-in-right me-1"></i> Реєстрація</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border">
+      <div class="container-fluid">
+        <a class="navbar-brand d-lg-none" href="index.html">
+          <img src="https://via.placeholder.com/30" alt="Лого" width="30" height="30">
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav list">
+            <li class="nav-item">
+              <a class="nav-link highlights active" aria-current="page" href="lessons.html">Уроки</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link highlights" href="myProgress.html">Мій прогрес</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link highlights" href="practice.html">Практика</a>
+            </li>
+          </ul>
+          <form class="d-flex ms-auto">
+            <div class="input-group">
+              <input class="form-control" type="search" placeholder="Пошук уроків..." aria-label="Search">
+              <button class="btn btn-outline-primary" type="submit"><i class="bi bi-search"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="back-button">
+        <a href="lessons.html" class="btn btn-outline-secondary">
+          <i class="bi bi-arrow-left"></i> Назад до уроків
+        </a>
+      </div>
+      
+      <div class="text-lesson-container">
+        <div class="lesson-controls">
+          <div>
+            <span class="badge bg-info me-2">Рівень: A2-B1</span>
+            <span class="badge bg-secondary">Час читання: 10 хв</span>
+          </div>
+          <div>
+            <button class="btn btn-sm btn-outline-primary me-2"><i class="bi bi-bookmark-plus"></i> Зберегти</button>
+            <button class="btn btn-sm btn-outline-success"><i class="bi bi-printer"></i> Роздрукувати</button>
+          </div>
+        </div>
+        
+        <div class="text-content">
+          <h1 class="lesson-title">Побутова лексика: Основи вживання</h1>
+          <p class="lesson-description">
+            У цьому уроці ми познайомимось із основною побутовою лексикою, яка допоможе вам впевнено спілкуватися у повсякденних ситуаціях.
+          </p>
+          
+          <div class="lesson-text">
+            <h4>Вступ</h4>
+            <p>
+              Побутова лексика – це слова, які ми використовуємо щодня в звичайних ситуаціях. Знання побутової лексики є основою для вільного спілкування в повсякденному житті. У цьому уроці ми розглянемо базові слова та фрази, які стосуються дому, їжі, одягу та інших побутових тем.
+            </p>
+            
+            <h4>Лексика на тему "Дім"</h4>
+            <p>
+              Дім – це місце, де ми проводимо значну частину свого часу. Важливо знати назви кімнат, меблів та побутових предметів:
+            </p>
+            <ul>
+              <li><strong>кімната</strong> – основне приміщення в будинку або квартирі</li>
+              <li><strong>вітальня</strong> – кімната для відпочинку та прийому гостей</li>
+              <li><strong>кухня</strong> – приміщення для приготування їжі</li>
+              <li><strong>спальня</strong> – кімната для сну</li>
+              <li><strong>ванна кімната</strong> – приміщення для гігієнічних процедур</li>
+            </ul>
+            
+            <h4>Меблі та побутові предмети</h4>
+            <p>
+              У кожній кімнаті є спеціальні меблі та предмети. Ось деякі з найважливіших:
+            </p>
+            <ul>
+              <li><strong>стіл</strong> – предмет меблів із горизонтальною поверхнею на ніжках</li>
+              <li><strong>стілець</strong> – меблі для сидіння однієї людини</li>
+              <li><strong>ліжко</strong> – меблі для спання</li>
+              <li><strong>шафа</strong> – меблі для зберігання одягу та інших речей</li>
+              <li><strong>холодильник</strong> – електричний прилад для зберігання продуктів у холоді</li>
+            </ul>
+          </div>
+          
+          <div class="vocabulary-section">
+            <h4 class="mb-3">Словник до уроку</h4>
+            
+            <div class="vocabulary-item">
+              <div class="row">
+                <div class="col-md-4"><strong>вітальня</strong> <span class="pronunciation">[vitalnya]</span></div>
+                <div class="col-md-8">
+                  <div class="translation">living room</div>
+                  <div class="example">Ми відпочиваємо у вітальні ввечері.</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="vocabulary-item">
+              <div class="row">
+                <div class="col-md-4"><strong>кухня</strong> <span class="pronunciation">[kuhnya]</span></div>
+                <div class="col-md-8">
+                  <div class="translation">kitchen</div>
+                  <div class="example">Я готую обід на кухні.</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="vocabulary-item">
+              <div class="row">
+                <div class="col-md-4"><strong>стіл</strong> <span class="pronunciation">[stil]</span></div>
+                <div class="col-md-8">
+                  <div class="translation">table</div>
+                  <div class="example">Книги лежать на столі.</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="vocabulary-item">
+              <div class="row">
+                <div class="col-md-4"><strong>ліжко</strong> <span class="pronunciation">[lizhko]</span></div>
+                <div class="col-md-8">
+                  <div class="translation">bed</div>
+                  <div class="example">Дитина спить у ліжку.</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="vocabulary-item">
+              <div class="row">
+                <div class="col-md-4"><strong>шафа</strong> <span class="pronunciation">[shafa]</span></div>
+                <div class="col-md-8">
+                  <div class="translation">wardrobe, cabinet</div>
+                  <div class="example">Мій одяг висить у шафі.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="exercise-section">
+            <h4 class="mb-3">Вправи для закріплення</h4>
+            
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-exercise1-tab" data-bs-toggle="pill" data-bs-target="#pills-exercise1" type="button" role="tab" aria-controls="pills-exercise1" aria-selected="true">Вправа 1</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-exercise2-tab" data-bs-toggle="pill" data-bs-target="#pills-exercise2" type="button" role="tab" aria-controls="pills-exercise2" aria-selected="false">Вправа 2</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-exercise3-tab" data-bs-toggle="pill" data-bs-target="#pills-exercise3" type="button" role="tab" aria-controls="pills-exercise3" aria-selected="false">Вправа 3</button>
+              </li>
+            </ul>
+            
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-exercise1" role="tabpanel" aria-labelledby="pills-exercise1-tab">
+                <h5>Заповніть пропуски</h5>
+                <p>Заповніть пропуски в реченнях відповідними словами:</p>
+                
+                <div class="mb-3">
+                    <p>1. Ми обідаємо на _______ в кухні.</p>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="q1" id="q1a">
+                      <label class="form-check-label" for="q1a">шафа</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="q1" id="q1b">
+                      <label class="form-check-label" for="q1b">стіл</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="q1" id="q1c">
+                      <label class="form-check-label" for="q1c">ліжко</label>
+                    </div>
+                  </div>
+                  
+                  <div class="mb-3">
+                    <p>2. Ми спимо у _______.</p>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="q2" id="q2a">
+                      <label class="form-check-label" for="q2a">стілець</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="q2" id="q2b">
+                      <label class="form-check-label" for="q2b">ліжко</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="q2" id="q2c">
+                      <label class="form-check-label" for="q2c">холодильник</label>
+                    </div>
+                  </div>
+                  
+                  <div class="mb-3">
+                    <p>3. Одяг зберігаємо у _______.</p>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="q3" id="q3a">
+                      <label class="form-check-label" for="q3a">шафі</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="q3" id="q3b">
+                      <label class="form-check-label" for="q3b">ванній</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="q3" id="q3c">
+                      <label class="form-check-label" for="q3c">кухні</label>
+                    </div>
+                  </div>
+                  
+                  <button class="btn btn-primary mt-3">Перевірити</button>
+                  </div>
+                  
+                  <div class="tab-pane fade" id="pills-exercise2" role="tabpanel" aria-labelledby="pills-exercise2-tab">
+                  <h5>З'єднайте слова з їх визначеннями</h5>
+                  <p>Перетягніть слова до відповідних визначень:</p>
+                  
+                  <div class="mb-3">
+                    <div class="card mb-2">
+                      <div class="card-body d-flex justify-content-between align-items-center">
+                        <div>Кухня</div>
+                        <select class="form-select" style="max-width: 300px;">
+                          <option selected>Виберіть відповідь</option>
+                          <option>Приміщення для приготування їжі</option>
+                          <option>Приміщення для сну</option>
+                          <option>Приміщення для відпочинку</option>
+                        </select>
+                      </div>
+                    </div>
+                    
+                    <div class="card mb-2">
+                      <div class="card-body d-flex justify-content-between align-items-center">
+                        <div>Вітальня</div>
+                        <select class="form-select" style="max-width: 300px;">
+                          <option selected>Виберіть відповідь</option>
+                          <option>Приміщення для приготування їжі</option>
+                          <option>Приміщення для сну</option>
+                          <option>Приміщення для відпочинку</option>
+                        </select>
+                      </div>
+                    </div>
+                    
+                    <div class="card mb-2">
+                      <div class="card-body d-flex justify-content-between align-items-center">
+                        <div>Спальня</div>
+                        <select class="form-select" style="max-width: 300px;">
+                          <option selected>Виберіть відповідь</option>
+                          <option>Приміщення для приготування їжі</option>
+                          <option>Приміщення для сну</option>
+                          <option>Приміщення для відпочинку</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <button class="btn btn-primary mt-3">Перевірити</button>
+                  </div>
+                  
+                  <div class="tab-pane fade" id="pills-exercise3" role="tabpanel" aria-labelledby="pills-exercise3-tab">
+                  <h5>Заповніть речення</h5>
+                  <p>Використайте слова з уроку, щоб заповнити речення:</p>
+                  
+                  <div class="mb-3">
+                    <p>1. Моя сім'я любить відпочивати у _______.</p>
+                    <input type="text" class="form-control" placeholder="Введіть слово">
+                  </div>
+                  
+                  <div class="mb-3">
+                    <p>2. На _______ стоять тарілки та чашки.</p>
+                    <input type="text" class="form-control" placeholder="Введіть слово">
+                  </div>
+                  
+                  <div class="mb-3">
+                    <p>3. У _______ ми готуємо їжу.</p>
+                    <input type="text" class="form-control" placeholder="Введіть слово">
+                  </div>
+                  
+                  <button class="btn btn-primary mt-3">Перевірити</button>
+                  </div>
+                  </div>
+                  </div>
+                  
+                  <div class="notes-section">
+                  <h4 class="mb-3">Мої нотатки</h4>
+                  <div class="mb-3">
+                    <textarea class="form-control" rows="4" placeholder="Записуйте важливі моменти тут..."></textarea>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <button class="btn btn-primary">Зберегти нотатки</button>
+                    <button class="btn btn-outline-primary">Завантажити PDF</button>
+                  </div>
+                  </div>
+                  
+                  </div>
+                  </div>
+                  
+                  <div class="related-lessons">
+                  <h3 class="mb-4">Схожі уроки</h3>
+                  <div class="row">
+                    <div class="col-md-4 mb-4">
+                      <div class="card related-lesson-card">
+                        <img src="https://i.pinimg.com/474x/22/37/c7/2237c7bf07262bcfcf2e9367b8a47c63.jpg" class="card-img-top" alt="Побутова лексика: Частина 2">
+                        <div class="card-body">
+                          <h5 class="card-title">Побутова лексика: Частина 2</h5>
+                          <p class="card-text">Розширений набір побутових слів та виразів для щоденного спілкування.</p>
+                          <a href="#" class="btn btn-primary">Переглянути</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                      <div class="card related-lesson-card">
+                        <img src="https://i.pinimg.com/474x/e3/2f/08/e32f08af59a42550fc12fcdca39c9886.jpg" class="card-img-top" alt="Граматика в побутовому спілкуванні">
+                        <div class="card-body">
+                          <h5 class="card-title">Граматика в побутовому спілкуванні</h5>
+                          <p class="card-text">Як правильно будувати речення в повсякденних розмовах.</p>
+                          <a href="#" class="btn btn-primary">Переглянути</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                      <div class="card related-lesson-card">
+                        <img src="https://i.pinimg.com/474x/d7/d2/f2/d7d2f2f41775d5978beb0d07bc68a125.jpg" class="card-img-top" alt="Ситуативні діалоги">
+                        <div class="card-body">
+                          <h5 class="card-title">Ситуативні діалоги</h5>
+                          <p class="card-text">Практичні приклади діалогів у типових побутових ситуаціях.</p>
+                          <a href="#" class="btn btn-primary">Переглянути</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                  </div>
+                  
+                  <footer class="footer mt-5 py-4 bg-light border-top">
+                  <div class="container">
+                  <div class="row">
+                    <div class="col-md-4 mb-3">
+                      <h5>Про платформу</h5>
+                      <p>Сучасна платформа для вивчення української мови. Різноманітні уроки, практичні завдання та персоналізований підхід.</p>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <h5>Швидкі посилання</h5>
+                      <ul class="list-unstyled">
+                        <li><a href="index.html#lessons" class="text-decoration-none">Уроки</a></li>
+                        <li><a href="index.html#progress" class="text-decoration-none">Мій прогрес</a></li>
+                        <li><a href="index.html#practice" class="text-decoration-none">Практика</a></li>
+                        <li><a href="#" class="text-decoration-none">Контакти</a></li>
+                        <li><a href="#" class="text-decoration-none">Про нас</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <h5>Зв'язатися з нами</h5>
+                      <ul class="list-unstyled">
+                        <li><i class="bi bi-envelope"></i> info@ukrmova.com</li>
+                        <li><i class="bi bi-telephone"></i> +380-00-000-000</li>
+                        <li class="mt-3">
+                          <div class="social-icons">
+                            <a href="#" class="me-2"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="me-2"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="me-2"><i class="bi bi-telegram"></i></a>
+                            <a href="#" class="me-2"><i class="bi bi-youtube"></i></a>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="row mt-3">
+                    <div class="col-12 text-center">
+                      <p class="mb-0">© 2025 Українська мова онлайн. Всі права захищені.</p>
+                    </div>
+                  </div>
+                  </div>
+                  </footer>
+                  
+                  <script
+                  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+                  crossorigin="anonymous"
+                  ></script>
+                  <script src="script.js"></script>
+   </body>
+ </html>
